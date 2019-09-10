@@ -1,0 +1,285 @@
+body,
+html {
+    /*background-color: #cddade;*/
+    height: 100%;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow: hidden;
+}
+
+
+.wrapper {
+    max-width: 2900px;
+    min-width: 700px;
+    margin: 0 auto;
+    padding: 40px;
+}
+
+.gantt {
+    display: grid;
+    border: 0;
+    border-radius: 12px;
+    position: relative;
+    overflow: scroll;
+    box-sizing: border-box;
+
+}
+.gantt__row {
+    display: grid;
+    grid-template-columns: 100px 55px 70px 70px 55px 70px  1fr;
+    background-color: #fff;
+}
+.gantt__row:nth-child(odd) {
+    background-color: #f5f5f5;
+}
+.gantt__row:nth-child(odd) .gantt__row-task {
+    background-color: #f5f5f5;
+}
+.gantt__row:nth-child(odd) .gantt__row-tantou {
+    background-color: #f5f5f5;
+}
+.gantt__row:nth-child(odd) .gantt__row-start {
+    background-color: #f5f5f5;
+}
+.gantt__row:nth-child(odd) .gantt__row-end {
+    background-color: #f5f5f5;
+}
+.gantt__row:nth-child(odd) .gantt__row-progress {
+    background-color: #f5f5f5;
+}
+.gantt__row:nth-child(odd) .gantt__row-edit {
+    background-color: #f5f5f5;
+}
+.gantt__row:nth-child(3) .gantt__row-bars {
+    border-top: 0;
+}
+.gantt__row:nth-child(3) .gantt__row-first {
+    border-top: 0;
+}
+.gantt__row--empty {
+    background-color: #ffd6d2 !important;
+    z-index: 1;
+}
+.gantt__row--empty .gantt__row-first {
+    border-width: 1px 1px 0 0;
+}
+.gantt__row--lines {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-color: transparent;
+    grid-template-columns: 100px 55px 70px 70px 55px 70px repeat(60, 1fr);
+}
+.gantt__row--lines span {
+    display: block;
+    border-right: 1px solid rgba(0, 0, 0, 0.1);
+    width: 30px;
+}
+
+.gantt__row--lines h1 {
+    display: block;
+    border-right: 1px solid rgba(0, 0, 0, 0.1);
+    width: 100px;
+}
+
+.gantt__row--lines h2 {
+    display: block;
+    border-right: 1px solid rgba(0, 0, 0, 0.1);
+    width: 55px;
+}
+
+.gantt__row--lines h3 {
+    display: block;
+    border-right: 1px solid rgba(0, 0, 0, 0.1);
+    width: 70px;
+}
+.gantt__row--lines span.marker {
+    background-color: rgba(10, 52, 68, 0.13);
+    z-index: 2;
+}
+.gantt__row--lines:after {
+    grid-row: 1;
+    grid-column: 0;
+    background-color: #1688b345;
+    z-index: 2;
+    height: 100%;
+}
+.gantt__row--months {
+    color: #fff;
+    background-color: #0a3444 !important;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    grid-template-rows: 25px 25px;
+    grid-template-columns: 100px 55px 70px 70px 55px 70px repeat(60, 1fr);
+}
+
+.gantt__row--months .gantt__row-task {
+    border-top: 0 !important;
+    background-color: #0a3444 !important;
+}
+
+.gantt__row--months .gantt__row-tantou {
+    border-top: 0 !important;
+    background-color: #0a3444 !important;
+}
+.gantt__row--months .gantt__row-start {
+    border-top: 0 !important;
+    background-color: #0a3444 !important;
+
+}.gantt__row--months .gantt__row-end {
+    border-top: 0 !important;
+    background-color: #0a3444 !important;
+
+}.gantt__row--months .gantt__row-progress {
+    border-top: 0 !important;
+    background-color: #0a3444 !important;
+
+}.gantt__row--months .gantt__row-edit {
+    border-top: 0 !important;
+    background-color: #0a3444 !important;
+}
+
+.gantt__row--months .gantt__row-month9 {
+    text-align: center;
+    grid-row: 1;
+    font-size: 13px;
+    font-weight: bold;
+    border-top: 0 !important;
+    background-color: #0a3444 !important;
+    display: inline-block;
+    white-space: nowrap;
+}
+
+ul{
+    display:inline-block;
+    width: 1800px;
+}
+
+.gantt__row--months .gantt__row-day {
+    text-align: center;
+    grid-row: 2;
+    grid-column: 7/67;
+    font-size: 13px;
+    font-weight: bold;
+    border-top: 0 !important;
+    background-color: #0a3444 !important;
+}
+
+.gantt__row--months span {
+    text-align: center;
+    font-size: 10px;
+    align-self: center;
+    font-weight: bold;
+    padding: 10px 0;
+}
+
+
+.gantt__row-task {
+
+    background-color: #fff;
+    border-width: 1px 0 0 0;
+    border-color: rgba(0, 0, 0, 0.1);
+    border-style: solid;
+    padding: 20px 0;
+    font-size: 13px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.gantt__row-tantou {
+    background-color: #fff;
+    border-width: 1px 0 0 0;
+    border-color: rgba(0, 0, 0, 0.1);
+    border-style: solid;
+    padding: 20px 0;
+    font-size: 13px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.gantt__row-start {
+    background-color: #fff;
+    border-width: 1px 0 0 0;
+    border-color: rgba(0, 0, 0, 0.1);
+    border-style: solid;
+    padding: 20px 0;
+    font-size: 13px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.gantt__row-end {
+    background-color: #fff;
+    border-width: 1px 0 0 0;
+    border-color: rgba(0, 0, 0, 0.1);
+    border-style: solid;
+    padding: 20px 0;
+    font-size: 13px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.gantt__row-progress {
+    background-color: #fff;
+    border-width: 1px 0 0 0;
+    border-color: rgba(0, 0, 0, 0.1);
+    border-style: solid;
+    padding: 20px 0;
+    font-size: 13px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.gantt__row-edit {
+    background-color: #fff;
+    border-width: 1px 0 0 0;
+    border-color: rgba(0, 0, 0, 0.1);
+    border-style: solid;
+    padding: 20px 0;
+    font-size: 13px;
+    font-weight: bold;
+    text-align: center;
+}
+.gantt__row-bars {
+    list-style: none;
+    display: grid;
+    padding: 9px 0;
+    margin: 0;
+    grid-template-columns: repeat(60, 1fr);
+    grid-gap: 8px 0;
+    border-top: 1px solid rgba(221, 221, 221, 0.);
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    
+}
+.gantt__row-bars li {
+    text-align: center;
+    min-height: 10px;
+    background-color: #55de84;
+    padding: 15px 12px;
+    color: #000000;
+    overflow: hidden;
+    position: relative;
+    cursor: pointer;
+    font-size: 13px;
+    font-weight: bold;
+    border-radius: 20px;
+}
+
+.gantt__row-bars li:before, .gantt__row-bars li:after {
+    content: "";
+    height: 100%;
+    top: 0;
+    z-index: 4;
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.3);
+}
+.gantt__row-bars li:before {
+    left: 0;
+}
+.gantt__row-bars li:after {
+    right: 0;
+}
+
+a{
+    position: relative;
+}
+
