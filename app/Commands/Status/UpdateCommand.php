@@ -29,8 +29,8 @@ class UpdateCommand {
 
 
        $status_list_raw = "";
-            $connection = ssh2_connect('172.16.1.84');
-            ssh2_auth_password($connection, 'atfworks', 'yoikuuki');
+            $connection = ssh2_connect('');
+            ssh2_auth_password($connection, '', '');
             $stream = ssh2_exec($connection, 'docker ps --format "{{.Names}}::{{.Image}}::{{.CreatedAt}}::{{.RunningFor}}::{{.Status}}::"');
             stream_set_blocking($stream, true);
             while (!feof($stream)) {

@@ -88,11 +88,8 @@ class DeployController extends AtfController {
      * @return [type] [description]
      */
     public function postDeploy() {
-        shell_exec('curl --request POST --globoff --cacert /Users/nagasakireon/gl.do.vcx.jp.crt --header "PRIVATE-TOKEN: WYm4n-bXxX9s2bhvsJc_" "https://gl.do.vcx.jp/api/v4/projects/30/pipeline?ref=master"');
-        
-        // 172.165.16.95サーバ用
-        //shell_exec('curl --request POST --globoff --cacert /home/ubuntu/gl.do.vcx.jp.crt --header "PRIVATE-TOKEN: WYm4n-bXxX9s2bhvsJc_" "https://gl.do.vcx.jp/api/v4/projects/30/pipeline?ref=master"');
-
+        shell_exec('curl --request POST --globoff --cacert /"');
+       
         return redirect()->route('deploy.deploy_list');
     }
 

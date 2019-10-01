@@ -16,7 +16,7 @@ class DeployCommand {
      */
     public function postDeploy(){
       
-        shell_exec('sudo curl --request POST --globoff --cacert /etc/gitlab-runner/certs/gl.do.vcx.jp.crt --header "PRIVATE-TOKEN: WYm4n-bXxX9s2bhvsJc_" "https://gl.do.vcx.jp/api/v4/projects/30/pipeline?ref=master"');
+        shell_exec('sudo curl --request POST --globoff --cacert "');
         
         return view( 'deploy.index');
     }  

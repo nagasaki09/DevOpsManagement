@@ -20,7 +20,7 @@ class UpdateCommandR {
      */
     public function __construct() {
 
-        $repositories = shell_exec('curl -u atfworks:Green4Yoikuuki! -k https://vss206.intra.atf.co.jp:8888/api/search?q=');
+        $repositories = shell_exec('');
 
         $requestObj = json_decode($repositories);
 

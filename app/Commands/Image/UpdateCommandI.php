@@ -29,7 +29,7 @@ class UpdateCommandI {
         
         $repository_name = $_SESSION['repository'];
        
-        $images = shell_exec('curl -u atfworks:Green4Yoikuuki! -k https://vss206.intra.atf.co.jp:8888/api/repositories/' . $repository_name . '/tags');
+        $images = shell_exec('curl ' . $repository_name . '/tags');
 
         $requestObj = json_decode($images);
 
